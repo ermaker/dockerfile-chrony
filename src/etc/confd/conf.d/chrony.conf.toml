@@ -1,6 +1,6 @@
 [template]
  src   = "chrony.conf.tmpl"
- dest  = "/etc/chrony.conf"
+ dest  = "/etc/chrony/chrony.conf"
  keys  = [
   "/chrony/servers",
   "/chrony/allowed"
