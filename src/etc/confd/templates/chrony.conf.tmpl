@@ -1,0 +1,14 @@
+{{- range $cidr := split (getv "/chrony/allowed" "10/8,172.16/12,192.168/16") "," }}
+allow {{$cidr}}
+{{- end}}
+
+cmdallow 127/8
+
+local stratum 5
+rtcsync
+driftfile /var/lib/chrony/drift
+
+# servers
+{{ range $server := split (getv "/chrony/servers" "0.amazon.pool.ntp.org,1.amazon.pool.ntp.org,2.amazon.pool.ntp.org,3.amazon.pool.ntp.org") "," -}}
+server {{$server}} iburst
+{{ end }}
