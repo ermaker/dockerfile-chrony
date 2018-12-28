@@ -7,3 +7,4 @@ services:
     privileged: true
     environment:
       - CHRONY_CMDPORT=323
+    restart: always
