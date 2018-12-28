@@ -1,0 +1,9 @@
+version: '2.1'
+
+services:
+  chrony:
+    image: ermaker/chrony
+    network_mode: host
+    privileged: true
+    environment:
+      - CHRONY_CMDPORT=323

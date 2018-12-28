@@ -1,7 +1,5 @@
 FROM alpine
-MAINTAINER Justin Menga <justin.menga@gmail.com>
-ARG app_name
-LABEL application=${app_name}
+MAINTAINER Minwoo Lee <ermaker@gmail.com>
 HEALTHCHECK --interval=3s --retries=20 CMD chronyc -h localhost tracking
 
 RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories && \
